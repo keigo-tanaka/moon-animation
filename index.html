@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="up"></div>
+  <div class="doun"></div>
+  <div class="line"></div>
+  <div class="hero">
+    <img src="img/moon-5307922_1280.jpg" alt="">li
+    <p>Moonlight</p>
+  </div>
+  <script>
+    $(".line").animate({"width":"100%"},5000,function(){
+      $(".line").css("right",0)
+      $(".line").animate({"width":"0%"},function(){
+        $(".up").animate({"height":"0%"});
+        $(".doun").animate({"height":"0%"} ,500,function(){
+          $("p").fadeIn("slow");
+        });
+      });
+    })
+  </script>
+</body>
+</html>
